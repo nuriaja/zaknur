@@ -14,9 +14,8 @@ class MapelController extends Controller
      */
     public function index()
     {
-        return view('admin.mapel',[
-            "mapel" => Mapel::all()
-        ]);
+        $mapel = Mapel::all();
+        return view('admin.mapel', compact('mapel'));
     }
 
     /**
@@ -59,7 +58,8 @@ class MapelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mapel = Mapel::find($id);
+        return view('admin.editmapel',compact('mapel'));
     }
 
     /**

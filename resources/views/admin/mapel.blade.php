@@ -4,7 +4,7 @@
 @section('content')
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Mapel</h1>
-    <a href="create" class="btn btn-warning btn-sm mb-4">Edit Mapel</a>
+    <a href="" class="btn btn-warning btn-sm mb-4">Edit Mapel</a>
     <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
@@ -23,30 +23,29 @@
                                     1
                                 </td>
                                 <td>
-                                   Bahasa indonesia <br>
-                                   PGWB <br>
-                                   PKK  <br>
-                                   Bahasa inggris  <br>
+                                   @foreach ($senin as $s)
+                                    {{$s->mapel->nama_mapel}} <br>
+                                   @endforeach
                                 </td>
                                 <td>
-                                   BK <br>
-                                   PBO <br>
-                                   PGWB <br>
+                                @foreach ($selasa as $s)
+                                    {{$s->mapel->nama_mapel}} <br>
+                                   @endforeach
                                 </td>
                                 <td>
-                                    PGWB <br>
-                                    PAI <br>
-                                    PBO <br>
+                                @foreach ($rabu as $s)
+                                    {{$s->mapel->nama_mapel}} <br>
+                                   @endforeach
+                                </td>
+                                <td>    
+                                @foreach ($kamis as $s)
+                                    {{$s->mapel->nama_mapel}} <br>
+                                   @endforeach
                                 </td>
                                 <td>
-                                    Bahasa inggris <br>
-                                    Matematika <br>
-                                    PKK <br>
-                                </td>
-                                <td>
-                                    Basis Data <br>
-                                    Matematika <br>
-                                    PKN <br>
+                                @foreach ($jumat as $s)
+                                    {{$s->mapel->nama_mapel}} <br>
+                                   @endforeach
                                 </td>
                                 <tr>
                                

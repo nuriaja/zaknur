@@ -15,6 +15,18 @@ return new class extends Migration
     {
         Schema::create('mapels', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('nama_mapel_id')->unsigned();
+            $table->foreign('nama_mapel_id')->nullable()->references('id')->on('nama_mapels')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            $table->bigInteger('kelas_id')->unsigned();
+            $table->foreign('kelas_id')->nullable()->references('id')->on('kelas')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            $table->bigInteger('hari_id')->unsigned();
+            $table->foreign('hari_id')->nullable()->references('id')->on('hari')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }
